@@ -29,7 +29,7 @@ public class HomeServlet extends HttpServlet {
             req.getRequestDispatcher("home.jsp").forward(req, resp);
             loginListener.log("User ->'" + userName + "' with role " + role + " accessed home page" + "' accessed home page from IP " + req.getRemoteAddr());
         }else {
-            resp.sendRedirect("401.jsp");
+            resp.sendRedirect("error/401.jsp");
         }
 
     }

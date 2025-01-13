@@ -15,8 +15,8 @@
             <h2>Login</h2>
             <p class="error"><%= request.getAttribute("error") != null ? request.getAttribute("error") : "" %></p>
             <form method="post" action="login" class="login-form">
-                <input type="text" name="userName" placeholder="Username" required>
-                <input type="password" name="userPassword" placeholder="Password" required>
+                <input type="text" name="userName" placeholder="Username" >
+                <input type="password" name="userPassword" placeholder="Password" >
                 <button type="submit">Login</button>
             </form>
         </div>
