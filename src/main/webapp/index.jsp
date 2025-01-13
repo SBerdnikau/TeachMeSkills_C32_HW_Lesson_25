@@ -13,7 +13,7 @@
     <section id="section-1">
         <div class="login-container">
             <h2>Login</h2>
-            <p class="error"><%= request.getAttribute("error") != null ? request.getAttribute("error") : "" %></p>
+            <p class="error">${requestScope["error"] != null ? requestScope["error"] : "" }</p>
             <form method="post" action="login" class="login-form">
                 <input type="text" name="userName" placeholder="Username" >
                 <input type="password" name="userPassword" placeholder="Password" >

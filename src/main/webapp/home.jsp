@@ -6,7 +6,7 @@
 </head>
 <body>
 <header>
-    <h1>You are logged in as,<span id="role"> <%= session.getAttribute("role") != null ? session.getAttribute("role") : "" %></span></h1>
+    <h1>You are logged in as,<span id="role"> ${sessionScope["role"] != null ? sessionScope["role"] : "" }</span></h1>
 </header>
 <main class="content">
     <h2 class="main-header">Welcome to our portal!</h2>

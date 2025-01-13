@@ -18,7 +18,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 75vh;
+    height: 78vh;
 }
 .login-container {
     background-color: #fff;
@@ -54,9 +54,7 @@ body {
 }
 
 .error{
-    background: #F08080;
     color: #CD5C5C;
-    padding: 7px;
     font-size: large;
     margin: 18px auto;
     border-radius: 4px;
