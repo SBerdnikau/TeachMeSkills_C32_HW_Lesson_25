@@ -34,18 +34,25 @@ public class LoginServlet extends HttpServlet {
             req.getRequestDispatcher("/index.jsp").forward(req, resp);
         }
 
-        User user = usersDB.findUser(userName, userPassword);
-        if (user != null){
+        try {
+            User user = usersDB.findUser(userName, userPassword);
+            if (user != null){
                 HttpSession session = req.getSession();
                 session.setAttribute("userName", user.getName());
                 session.setAttribute("role",user.getRole());
                 req.getRequestDispatcher("/home.jsp").forward(req, resp);
                 loginListener.logLoginAttempt(userName, true, remoteIP);
-        }else {
-                req.setAttribute("error", "Wrong password or this user not in datadase");
+            }else {
+                req.setAttribute("error", "Wrong password!");
                 loginListener.logLoginAttempt(userName, false, remoteIP);
                 req.getRequestDispatcher("/index.jsp").forward(req, resp);
+            }
+        } catch (Exception e) {
+            req.setAttribute("error", "This user not in datadase!");
+            loginListener.logLoginAttempt(userName, false, remoteIP);
+            req.getRequestDispatcher("/index.jsp").forward(req, resp);
         }
+
 
     }
 }
